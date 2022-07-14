@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>document1</title>
+  </head>
+  <body>
+    <script>
+      const element = document.createElement("ul");
+      document.body.appendChild(element);
+      element.className = "elemClass";
+
+      const element1 = document.createElement("li");
+      const element2 = document.createElement("li");
+      element1.innerText = "the first list";
+      element2.innerText = "the second list";
+      document.getElementsByClassName("elemClass")[0].appendChild(element1);
+      document.getElementsByClassName("elemClass")[0].appendChild(element2);
+      element1.className = "list1";
+      element2.className = "list2";
+
+      let list11 = document.querySelector(".list1");
+      list11.addEventListener("mousedown", () => {
+        document.getElementsByClassName("list1")[0].style.color = "red";
+      });
+
+      let list12 = document.querySelector(".list2");
+      list12.addEventListener("mousedown", () => {
+        document.getElementsByClassName("list2")[0].style.color = "blue";
+      });
+    </script>
+  </body>
+</html>
